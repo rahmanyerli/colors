@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>DOM CSS</title>
-	<link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../css/ra.css">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ra Color Palttes</title>
+	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://rahmanyerli.github.io/racss/css/ra.css" />
 	<style>
 		.color {
             width: 10rem;
@@ -40,28 +41,29 @@
 </head>
 
 <body>
-	<header class="sticky z-max t-0 bg-default">
+	<header class="bg-primary">
 		<nav>
 			<ul>
-				<li>
-					<a class="logo" href="#">&nbsp;</a>
+				<li class="w-5">
+					<a class="logo-2" href="../home">&nbsp;</a>
 				</li>
-				<li>
-					<a href="./Index.html">Home</a>
+				<li class="w-8">
+					<a href="../generator/">Generator</a>
 				</li>
-				<li class="flex"></li>
-				<li>
-					<button type="button" class="white out" onclick="createPalette();">Generate</button>
+				<li class="w-7">
+					<a href="../palettes/">Palettes</a>
+				</li>
+				<li class="w-7">
+					<a href="../shader/">Shader</a>
 				</li>
 			</ul>
 		</nav>
 	</header>
-	<div class="container max-w-64">
-		<div id="colorPalette" class="my-2">
+	<main class="container-80">
+		<div id="colorPalette" class="cols gap">
 		</div>
-	</div>
+	</main>
 
-	<script src="./DomJs.js" type="text/javascript"></script>
 	<script type="text/javascript">
 
 		function createPalette() {
@@ -74,6 +76,7 @@
 			for (let i = 2; i < 20; i++) {
 				var color = document.createElement("textarea");
 				color.classList.add("color");
+				color.classList.add("span-3");
 				color.setAttribute("readonly", "readonly");
 				var hsl = rgbToHsl(red, green, blue);
 				var l = i * 0.05;
