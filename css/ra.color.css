@@ -1,0 +1,157 @@
+.color {
+	height: 11rem;
+	line-height: 11rem;
+	padding: 0;
+	border: 0;
+	transition: all 0.25s ease;
+	display: inline-block;
+	text-align: center;
+	color: #FFFFFF;
+	cursor: pointer;
+	user-select: none;
+	animation: append 0.4s ease;
+}
+
+.color:hover, .color:focus {
+	z-index: 1;
+	border: 0 !important;
+	transform: scale(1.25);
+	box-shadow: 0 0 1rem 0.25rem rgba(0, 0, 0, 0.3);
+}
+
+.color:active {
+	transform: scale(1.125);
+}
+
+.rotate {
+	transition: all 0.6s ease;
+	transform: rotate(135deg);
+}
+
+
+/** animations **/
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes bounce {
+	0%, 20%, 40%, 60%, 80%, 100% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(-1.5rem);
+	}
+	30% {
+		transform: translateY(-1rem);
+	}
+	50% {
+		transform: translateY(-0.5rem);
+	}
+	70% {
+		transform: translateY(-0.25rem);
+	}
+	90% {
+		transform: translateY(-0.125rem);
+	}
+}
+
+@keyframes shake {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	10%, 30%, 50%, 70%, 90% {
+		transform: translateX(-0.5rem);
+	}
+	20%, 40%, 60%, 80% {
+		transform: translateX(0.5rem);
+	}
+}
+
+@keyframes swing {
+	20% {
+		transform: rotate(15deg);
+	}
+	40% {
+		transform: rotate(-10deg);
+	}
+	60% {
+		transform: rotate(5deg);
+	}
+	80% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes wiggle {
+	0% {
+		transform: skewX(9deg);
+	}
+	10% {
+		transform: skewX(-8deg);
+	}
+	20% {
+		transform: skewX(7deg);
+	}
+	30% {
+		transform: skewX(-6deg);
+	}
+	40% {
+		transform: skewX(5deg);
+	}
+	50% {
+		transform: skewX(-4deg);
+	}
+	60% {
+		transform: skewX(3deg);
+	}
+	70% {
+		transform: skewX(-2deg);
+	}
+	80% {
+		transform: skewX(1deg);
+	}
+	90% {
+		transform: skewX(0deg);
+	}
+	100% {
+		transform: skewX(0deg);
+	}
+}
+
+@keyframes append {
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
