@@ -28,6 +28,18 @@
 	transform: rotate(135deg);
 }
 
+.icon-generator {
+	background-image: url("../images/generator.svg");
+}
+
+.icon-palette {
+	background-image: url("../images/palette.svg");
+}
+
+.icon-shader {
+	background-image: url("../images/shader.svg");
+}
+
 
 /** animations **/
 

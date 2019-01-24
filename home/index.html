@@ -10,48 +10,58 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="https://rahmanyerli.github.io/racss/css/ra.css" />
 </head>
 
-<body>
-	<header class="relative bg-primary">
-		<nav>
-			<ul>
-				<li class="w-5">
-					<a class="logo-2" href="../home">&nbsp;</a>
-				</li>
-				<li class="w-8">
-					<a href="../generator/">Generator</a>
-				</li>
-				<li class="w-7">
-					<a href="../palettes/">Palettes</a>
-				</li>
-				<li class="w-7">
-					<a href="../shader/">Shader</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
-	<main class="container-64 padding">
-		<article>
-			<header>
-				<h1>
+<body class="container-80 padding">
+	<header class="cols relative margin-top">
+		<section class="span-6">
+			<a href="../home">
+				<h2>
 					Ra Colors
-				</h1>
-			</header>
-			<hr>
-			<main>
-				<div class="cols gap">
-					<section class="span-4">
-						<a class="button button-xl out-primary" href="../generator">Color Generator</a>
-					</section>
-					<section class="span-4">
-						<a class="button button-xl out-primary" href="../palettes">Color Palettes</a>
-					</section>
-					<section class="span-4">
-						<a class="button button-xl out-primary" href="../shader">Color Shader</a>
-					</section>
-				</div>
-			</main>
-		</article>
+				</h2>
+			</a>
+		</section>
+		<section class="span-6">
+			<nav>
+				<ul class="breadcrumb pipe float-right padding-none border-none color-primary">
+					<li>
+						<a href="../generator/">Generator</a>
+					</li>
+					<li>
+						<a href="../palettes/">Palettes</a>
+					</li>
+					<li>
+						<a href="../shader/">Shader</a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	</header>
+	<hr>
+	<main>
+		<div class="cols gap-double">
+			<section class="span-4">
+				<img src="../images/generator.svg" class="w-100 padding-double" alt="Ra Color Generator">
+				<a class="button button-xl out-primary" href="../generator">Color Generator</a>
+			</section>
+			<section class="span-4">
+				<img src="../images/palette.svg" class="w-100 padding-double" alt="Ra Color Palette">
+				<a class="button button-xl out-primary" href="../palettes">Color Palettes</a>
+			</section>
+			<section class="span-4">
+				<img src="../images/shader.svg" class="w-100 padding-double" alt="Ra Color Shader">
+				<a class="button button-xl out-primary" href="../shader">Color Shader</a>
+			</section>
+		</div>
 	</main>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133186266-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-133186266-1');
+	</script>
 </body>
 
 </html>
