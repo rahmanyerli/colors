@@ -91,7 +91,7 @@ function createPalette() {
 	var b = randomColor(0, 255);
 	var resultType = document.querySelector("input[type=radio][name=type]:checked").value;
 
-	for (let i = 2; i < 20; i++) {
+	for (let i = 1; i < 20; i++) {
 		var colorCell = document.createElement("textarea");
 		colorCell.classList.add("color");
 		colorCell.classList.add("span-2");
@@ -108,7 +108,7 @@ function createPalette() {
 				color = toRgbString(rgb.r, rgb.g, rgb.b);
 				break;
 			case "hsl":
-				color = toHslString(hsl.h, hsl.s, hsl.l);
+				color = toHslString(hsl.h, hsl.s, l);
 				break;
 		}
 		colorCell.style.backgroundColor = color;
@@ -197,7 +197,6 @@ function shadeAll() {
 
 function shade(hsl, l, resultType) {
 	var colorCell = createColorCell();
-	colorCell.classList.add("span-2");
 	var rgb = hslToRgb(hsl.h, hsl.s, l);
 	var hex = rgbToHex(rgb.r, rgb.g, rgb.b);
 	colorCell.style.backgroundColor = hex;
@@ -364,4 +363,46 @@ function setTempText(element, delay, text) {
 	setTimeout(() => {
 		element.value = original;
 	}, delay);
+}
+
+function mix(colors) {
+	let r = 0;
+	let g = 0;
+	let b = 0;
+	if (colors && colors.length > 0) {
+		for (const color of colors) {
+			let rgb = color.getAttribute("data-color").split(",");
+			r += parseInt(rgb[0]);
+			g += parseInt(rgb[1]);
+			b += parseInt(rgb[2]);
+		}
+		r = Math.round(r / colors.length);
+		g = Math.round(g / colors.length);
+		b = Math.round(b / colors.length);
+	}
+	return { r: r, g: g, b: b };
+}
+
+function mixall() {
+	const colorMix = document.getElementById("colorMix");
+	const colors = colorMix.querySelectorAll("[draggable]");
+	const colorArray = [];
+	let rgb = "rgb(255, 255, 255)";
+	if (colors && colors.length > 0) {
+		for (const color of colors) {
+			colorArray.push(color.getAttribute("data-color"));
+		}
+		const mixed = mix(colors);
+		let colorPalette = document.getElementById("colorPalette");
+		rgb = toRgbString(mixed.r, mixed.g, mixed.b);
+	}
+	else {
+		let em = document.createElement("em");
+		em.textContent = "drop zone";
+		em.className = "span-12 text-center color-3";
+		colorMix.appendChild(em);
+	}
+	let colorText = document.getElementById("colorText");
+	colorText.value = rgb;
+	shadeAll();
 }

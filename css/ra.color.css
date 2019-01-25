@@ -8,6 +8,9 @@
 	text-align: center;
 	color: #FFFFFF;
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	animation: append 0.4s ease;
 }
@@ -38,6 +41,14 @@
 
 .icon-shader {
 	background-image: url("../images/shader.svg");
+}
+
+.icon-mixer {
+	background-image: url("../images/mixer.svg");
+}
+
+.swing {
+	animation: swing 1s ease;
 }
 
 

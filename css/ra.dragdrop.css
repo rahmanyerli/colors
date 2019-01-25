@@ -1,0 +1,63 @@
+[draggable] {
+	height: 5.5rem;
+	line-height: 5.5rem;
+	transition: all 0.2s ease;
+	display: inline-block;
+	text-align: center;
+	color: #FFFFFF;
+	cursor: pointer;
+	border-radius: 0.25rem;
+	border: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+[dropzone] {
+	position: relative;
+	grid-column: span 1;
+	min-height: 5.5rem;
+	transition: all 0.4s ease;
+	border-radius: 0.25rem;
+}
+
+.visible {
+	transform: scale(0.5);
+}
+
+.hidden {
+	transform: scale(0);
+}
+
+.shrink {
+	width: 0px;
+}
+
+.removed {
+	display: none;
+}
+
+.red {
+	background-color: #E53935;
+}
+
+.green {
+	background-color: #43A047;
+}
+
+.blue {
+	background-color: #1E88E5;
+}
+
+.yellow {
+	background-color: #FDD835;
+}
+
+.white {
+	background-color: white;
+}
+
+.black {
+	background-color: black;
+}

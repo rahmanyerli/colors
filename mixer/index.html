@@ -6,10 +6,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="color, scheme, wheel, color wheel, theory, color theory, color shades, color mixer, colorwheel, design, designer, palette, colorize, colorset, ryb, hex, rgb, hsl, web, colors, webcolors, safecolors">
-	<title>Ra Color Generator</title>
+	<title>Ra Color Mixer</title>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" media="screen" href="https://rahmanyerli.github.io/racss/css/ra.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="../css/ra.color.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="../css/ra.dragdrop.css" />
 </head>
 
 <body class="container-80 padding">
@@ -17,7 +18,7 @@
 		<section class="span-6">
 			<a href="../home">
 				<h2>
-					Ra Color Generator
+					Ra Color Mixer
 				</h2>
 			</a>
 		</section>
@@ -43,7 +44,7 @@
 	<hr>
 	<main>
 		<div class="cols">
-			<section class="span-5">
+			<section class="span-4">
 				<input type="radio" name="type" id="radioHex" value="hex" checked onchange="changeResultType()" />
 				<label for="radioHex" class="pr-1">hex </label>
 				<input type="radio" name="type" id="radioRgb" value="rgb" onchange="changeResultType()" />
@@ -51,28 +52,27 @@
 				<input type="radio" name="type" id="radioHsl" value="hsl" onchange="changeResultType()" />
 				<label for="radioHsl">hsl </label>
 			</section>
-			<section class="span-5">
-				<input type="radio" name="tone" id="radioNormal" value="normal" checked />
-				<label for="radioNormal" class="pr-1">Normal</label>
-				<input type="radio" name="tone" id="radioMatt" value="matt" />
-				<label for="radioMatt" class="pr-1">Matt</label>
-				<input type="radio" name="tone" id="radioPastel" value="pastel" />
-				<label for="radioPastel">Pastel</label>
-			</section>
-			<section class="span-2">
-				<button class="bg-primary span-2" type="button" onclick="generateAll();">
-					<span id="iconGear" class="absolute left-0 icon icon-gear-white">&nbsp;</span>Generate
-				</button>
+			<section class="span-6 cols gap" dropzone="copy" aria-dropeffect="copy">
+				<div class="red span-2" draggable="true" data-color="255,0,0"></div>
+				<div class="yellow span-2" draggable="true" data-color="255,255,0"></div>
+				<div class="green span-2" draggable="true" data-color="0,255,0"></div>
+				<div class="blue span-2" draggable="true" data-color="0,0,255"></div>
 			</section>
 		</div>
 		<hr>
-		<div id="colorPalette" class="color-palette cols gap">
+		<div id="colorMix" class="cols gap bg-1" dropzone="move" aria-dropeffect="move">
+			<em class="span-12 text-center color-3">drop zone</em>
+		</div>
+		<input type="text" name="colorText" id="colorText" style="display: none">
+		<hr>
+		<div id="colorPalette" class="cols gap">
 			<em class="span-12">
-				Hit the "Generate" button to see randomly generated colors and click on it to copy the color code to clipboard.
+				Drag and drop colors to the drop zone to see a mixed color and all shades.
 			</em>
 		</div>
 	</main>
 	<script src="../js/ra.color.js"></script>
+	<script src="../js/ra.dragdrop.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133186266-1"></script>

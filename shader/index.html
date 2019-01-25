@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="color, scheme, wheel, color wheel, theory, color theory, colorwheel, design, designer, palette, colorize, colorset, RYB, RGB, web, colors, webcolors, safecolors, blind, blindness">
+	<meta name="keywords" content="color, scheme, wheel, color wheel, theory, color theory, color shades, color mixer, colorwheel, design, designer, palette, colorize, colorset, ryb, hex, rgb, hsl, web, colors, webcolors, safecolors">
 	<title>Ra Color Shader</title>
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" media="screen" href="https://rahmanyerli.github.io/racss/css/ra.css" />
@@ -33,6 +33,9 @@
 					<li>
 						<a href="../shader/">Shader</a>
 					</li>
+					<li>
+						<a href="../mixer/">Mixer</a>
+					</li>
 				</ul>
 			</nav>
 		</section>
@@ -49,11 +52,15 @@
 				<label for="radioHsl">hsl </label>
 			</section>
 			<section class="span-9">
-				<input type="text" id="colorText" placeholder="#FF0000, rgb(255, 0, 0) or hsl(0, 100%, 50%)" oninput="shadeAll();" />
+				<input type="text" id="colorText" placeholder="#FF0000    rgb(255,0,0)    hsl(0,100%,50%)" oninput="shadeAll();" />
 			</section>
 		</div>
 		<hr>
 		<div id="colorPalette" class="color-palette cols gap">
+			<em class="span-12">
+				Paste or type your color code in the text box above to see all the shades of your color. You can use HEX, RGB or
+				HSL format.
+			</em>
 		</div>
 	</main>
 
@@ -65,7 +72,6 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
-
 		gtag('config', 'UA-133186266-1');
 	</script>
 </body>
