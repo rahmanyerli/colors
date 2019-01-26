@@ -1,6 +1,6 @@
 # Ra Colors
 
-**Color Palettes for Web Development**
+**Color palettes for designers.**
 
 [View Demo](https://rahmanyerli.github.io/colors)
 
